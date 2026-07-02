@@ -27,7 +27,32 @@ import qtawesome as qta
 import requests
 import bs4
 import django
-import pygame
 # ====================================================== #
 
 
+
+class Mainwindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Void-Tools")
+        self.setGeometry(500,500,500,500)
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ========== For_run_app ========== #
+app = QApplication()
+window = Mainwindow()
+window.show()
+sys.exit(app.exec())
