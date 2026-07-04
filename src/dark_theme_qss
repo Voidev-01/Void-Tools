@@ -2,34 +2,73 @@ MainWindow{
     background-color: black;
 }
 
+
+/*-----------------------------TopBar-----------------------------------*/
 TopBar{
     background-color: #2b2b2b;
+    border-bottom: 2px solid rgba(255,255,255,35);
     
 }
 
 TopBar QLabel{
     color: #d8d8d8;
+    background-color: rgba(255,255,255,25);
+    border-radius: 10px;
+
 
 }
 
 TopBar QPushButton{
     background-color: rgba(255,255,255,25);
-    border: none;
-    border-radius: 50%;
+    border: rgba(255,255,255,25);
+    border-radius: 10px;
 }
+TopBar QPushButton:hover{
+    background-color: rgba(255,255,255,35);
+}
+/*----------------------------------------------------------------------*/
 
 
 
-
+/*-----------------------------TaskBar----------------------------------*/
 TaskBar{
     background-color: rgba(25,25,25,140);
     border-radius:18px;
     border:1px solid rgba(255,255,255,35);
+    
 }
 
 TaskBar QPushButton{
-    border: none;
-    border-radius: 0px;
+    background-color: rgba(255,255,255,5);
+    padding: 90px;
+    border: 1px solid rgba(255,255,255,10);
+    border-radius: 10px;
+   
+   
 
 }
 
+TaskBar QPushButton:hover{
+    background-color: rgba(255,255,255,25);
+
+
+}
+/*----------------------------------------------------------------------*/
+
+NotificationDialog{
+    background-color: #2b2b2b;
+}
+
+NotificationDialog QPushButton{
+    background-color: rgba(255,255,255,35);
+    color: white;
+    border: 2px solid rgba(255,255,255,10);
+    border-radius: 3px;
+}
+
+NotificationDialog QLabel{
+    color: white;
+
+    background-color: rgb(88, 88, 88);
+    
+}
