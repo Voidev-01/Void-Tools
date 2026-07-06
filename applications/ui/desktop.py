@@ -10,7 +10,7 @@ class Desktop(QWidget):
         
         ICON_SIZE = QSize(50,50)
         self.setAttribute(Qt.WidgetAttribute.WA_StyledBackground, True)
-        self.original_wallpaper = QPixmap("/home/mahdi/Void-tools/assets/image/bbbbbbb.png")
+        self.original_wallpaper = QPixmap("/home/mahdi/Void-tools/assets/image/guts-minimalist-5120x2880-25695.png")
         self.scaled_wallpaper = None
         self.update_wallpaper()
         self.setObjectName("desktops")

@@ -6,6 +6,7 @@ from PySide6.QtCore import *
 from ui.topbar import TopBar
 from ui.desktop import Desktop
 from ui.taskbar import TaskBar
+from ui.Startmenu import StartMenu
 
 from utils.functions import close_window
 # ================================================== #
@@ -27,8 +28,29 @@ class MainWindow(QMainWindow):
         self.desktop = Desktop()
         self.main_layout.addWidget(self.desktop)
         
+        
         self.taskbar = TaskBar()
         self.main_layout.addWidget(self.taskbar)
         shortcut_esc = QShortcut(QKeySequence(Qt.Key_Escape), self)
         shortcut_esc.activated.connect(close_window)
+        self.start_menu = StartMenu(self)
+        self.start_menu.raise_()
+        self.start_menu.hide()
+        self.taskbar.startcliked.connect(self.toggle_start_menu)
+        self.resizeEvent(None)
+        #QTimer.singleShot(0, lambda: self.resizeEvent(None))
+
+
+    def resizeEvent(self,event):
+        super().resizeEvent(event)
+        x = (self.width() - self.start_menu.width()) // 2
+        y = (self.height() - self.start_menu.height()) // 2 - 20
+        self.start_menu.move(x, y)
+
         
+
+    def toggle_start_menu(self):
+        if self.start_menu.isVisible():
+            self.start_menu.hide_menu()
+        else:
+            self.start_menu.show_menu()

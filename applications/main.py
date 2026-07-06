@@ -19,6 +19,6 @@ QTimer.singleShot(
     5000,
     lambda: NotificationDialog("For Exit Clicked Esc or power btn").exec()
 )
-
-window.showFullScreen()
-sys.exit(apps.exec())
+if __name__ == "__main__":
+    window.showFullScreen()
+    sys.exit(apps.exec())

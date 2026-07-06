@@ -4,13 +4,17 @@ import qtawesome as qta
 from PySide6.QtWidgets import *
 from PySide6.QtCore import *
 from PySide6.QtGui import *
+
+from ui.Startmenu import StartMenu
 # =========================================== #
 
 # ========== class taskbar ========== #
 
 class TaskBar(QWidget):
+    startcliked = Signal()
     def __init__(self):
         super().__init__()
+        
         self.setAttribute(Qt.WidgetAttribute.WA_StyledBackground, True)
         self.space_left = QWidget()
         self.space_left.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
@@ -18,7 +22,7 @@ class TaskBar(QWidget):
         self.space_right.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
         ICON_SIZE = QSize(32,32)
         self.setObjectName("taskbars")
-        self.setFixedHeight(45)
+        self.setFixedHeight(60)
         self.lay_task_app = QHBoxLayout()
         self.setLayout(self.lay_task_app)
 
@@ -33,6 +37,7 @@ class TaskBar(QWidget):
         self.btn_app_driver.setIcon(QIcon("/home/mahdi/Void-tools/assets/icons/icon_3232.png"))
         ICON_SIZE_DRI = QSize(100,90)
         self.btn_app_driver.setIconSize(ICON_SIZE_DRI)
+        self.btn_app_driver.clicked.connect(self.startcliked.emit)
         
 
         self.btn_terminal = QPushButton()
