@@ -91,7 +91,8 @@ class StartMenu(QWidget):
 
             button.setIconSize(ICON_SIZE)
 
-            #button.setText(text)
+            button.setText(text)
+            
 
             button.setFixedSize(110,100)
 
@@ -119,7 +120,7 @@ class StartMenu(QWidget):
 
         self.setting = QPushButton()
 
-        self.setting.setIcon(qta.icon("ri.settings-5-fill", color="white"))
+        self.setting.setIcon(qta.icon("ri.settings-5-fill", color="#afafaf"))
 
         self.setting.setIconSize(QSize(28,28))
 
@@ -127,7 +128,7 @@ class StartMenu(QWidget):
 
         self.power = QPushButton()
 
-        self.power.setIcon(qta.icon("fa6s.power-off", color="white"))
+        self.power.setIcon(qta.icon("fa6s.power-off", color="#afafaf"))
 
         self.power.setIconSize(QSize(28,28))
         self.power.clicked.connect(close_window)
