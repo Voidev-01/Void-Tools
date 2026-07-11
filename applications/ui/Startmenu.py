@@ -10,7 +10,7 @@ ICON_SIZE = QSize(48, 48)
 
 
 class StartMenu(QWidget):
-    def __init__(self, parent=None):
+    def __init__(self,parent=None):
         super().__init__(parent)
 
         self.setFixedSize(700, 500)
