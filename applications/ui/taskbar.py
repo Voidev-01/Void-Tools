@@ -6,6 +6,8 @@ from PySide6.QtCore import *
 from PySide6.QtGui import *
 
 from ui.Startmenu import StartMenu
+
+from pathlib import Path
 # =========================================== #
 
 # ========== class taskbar ========== #
@@ -34,7 +36,9 @@ class TaskBar(QWidget):
         icon_file = qta.icon("msc.file-directory",color="white")
 
         self.btn_app_driver = QPushButton()
-        self.btn_app_driver.setIcon(QIcon("/Void-tools/assets/icons/icon_3232.png"))
+        img_address = Path(__file__).resolve().parent.parent.parent
+        name_img = img_address /'assets'/'icons'/'icon_3232.png'
+        self.btn_app_driver.setIcon(QIcon(str(name_img)))
         ICON_SIZE_DRI = QSize(100,90)
         self.btn_app_driver.setIconSize(ICON_SIZE_DRI)
         self.btn_app_driver.clicked.connect(self.startcliked.emit)

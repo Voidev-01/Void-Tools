@@ -50,9 +50,11 @@ TaskBar QPushButton{
 
 TaskBar QPushButton:hover{
     background-color: rgba(255,255,255,25);
-
+    border-radius: 15px;
+    
 
 }
+
 /*----------------------------------------------------------------------*/
 
 NotificationDialog{

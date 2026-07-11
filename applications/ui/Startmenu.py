@@ -21,6 +21,15 @@ class StartMenu(QWidget):
             border:1px solid rgba(255,255,255,35);
             border-radius:20px;
         }
+        
+        QToolButton{
+            color:white;
+        }
+        QToolButton:hover{
+            background:rgba(25,25,25,255);
+            border:2px solid rgba(255,255,255,255)
+        }
+        
 
         QLineEdit{
             background: rgba(40,40,40,180);
@@ -29,6 +38,9 @@ class StartMenu(QWidget):
             border-radius:12px;
             padding:10px;
             font-size:15px;
+        }
+        QLineEdit:hover{
+            background: rgba(40,40,40,255);
         }
 
         QPushButton{

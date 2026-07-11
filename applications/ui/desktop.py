@@ -10,14 +10,11 @@ class Desktop(QWidget):
         ICON_SIZE = QSize(50, 50)
         self.setAttribute(Qt.WidgetAttribute.WA_StyledBackground, True)
         
-        img_address = Path(__file__).parent
-        name_img = img_address / "assets" / "image" / "huawei-dark-blue-5120x2880-22840.jpg"
+        img_address = Path(__file__).resolve().parent.parent.parent
+        name_img = "guts-minimalist-5120x2880-25695.png"
+        name_img_adress = img_address / "assets" / "image" / f"{name_img}"
         
-        self.original_wallpaper = QPixmap(str(name_img))
-        if self.original_wallpaper.isNull():
-            print("❌Error", name_img)
-        else:
-            print("✅ load img")
+        self.original_wallpaper = QPixmap(str(name_img_adress))
         
         self.scaled_wallpaper = None
         self.update_wallpaper()
